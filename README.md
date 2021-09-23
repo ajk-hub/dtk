@@ -1,7 +1,7 @@
 # Development Tool Kit
 
 ## How to install
-- Create and copy .user-preference.json from [samples](https://github.com/ajk-hub/dtk/blob/main/samples/.user-preference.json)
+- Create or copy `.user-preference.json` from [samples](https://github.com/ajk-hub/dtk/blob/main/samples/.user-preference.json)
 in your home directory e.g. /home/dtk 
 - Download dtk.zip file from [Release](https://github.com/ajk-hub/dtk/releases)
 ```shell
@@ -9,6 +9,9 @@ chmod +x dtk
 mv dtk /usr/local/bin
 mv _dtk.zsh ~/.oh-my-zsh/completions/_dtk.zsh
 ```
+- Now type `dtk` in terminal
+- For completions type `dtk` and press tab
+
 
 ## For Development Use
 - Create a virtual env for python : `python -m venv venv` 
