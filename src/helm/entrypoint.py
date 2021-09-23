@@ -56,10 +56,6 @@ def _register_arg_options(parser: ArgumentParser):
         parser.print_help()
         sys.exit()
 
-    if len(sys.argv) == 3 and 'helm' == sys.argv[1] and 'list' == sys.argv[2]:
-        helm_list_parser.print_help()
-        sys.exit()
-
     if len(sys.argv) == 3 and 'helm' == sys.argv[1] and 'status' == sys.argv[2]:
         helm_status_parser.print_help()
         sys.exit()
