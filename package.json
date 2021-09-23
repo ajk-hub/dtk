@@ -1,0 +1,29 @@
+{
+  "name": "dtk",
+  "version": "1.0.0",
+  "description": "Development Tool Kit",
+  "keywords": [
+    "dtk",
+    "development",
+    "tool",
+    "toolkit"
+  ],
+  "homepage": "https://github.com/ajk-hub/dtk#readme",
+  "bugs": {
+    "url": "https://github.com/ajk-hub/dtk/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ajk-hub/dtk.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Ashim Jung Khadka",
+    "email": "ashim.jung.khadka@gmail.com"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "husky": "^7.0.2"
+  }
+}

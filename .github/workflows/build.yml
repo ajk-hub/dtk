@@ -1,0 +1,52 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Install dependencies
+        run: |
+          make install-dependencies
+
+      - name: Lint with flake8
+        run: |
+          make lint
+
+      - name: Build artifacts
+        run: |
+          make build-artifacts
+
+      - name: Generate changelog
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v3
+        if:
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          git-user-name: "Github Actions"
+          git-user-email: "ajk-hub@github.actions.com"
+          output-file: "CHANGELOG.md"
+          release-count: "0"
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1.8.9
+        if: github.ref == 'refs/heads/main' && ${{ steps.changelog.outputs.skipped == 'false' }}
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ steps.changelog.outputs.tag }}
+          name: ${{ steps.changelog.outputs.tag }}
+          body: ${{ steps.changelog.outputs.clean_changelog }}
+          artifacts: "dtk.zip"
