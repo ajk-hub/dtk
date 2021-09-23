@@ -7,7 +7,7 @@ in your home directory e.g. /home/dtk
 - Extract it and open terminal from there
 ```shell
 chmod +x dtk
-mv dtk /usr/local/bin
+sudo mv dtk /usr/local/bin
 mv _dtk.zsh ~/.oh-my-zsh/completions/_dtk.zsh
 ```
 - To confirm installation, type `dtk` in terminal 
