@@ -1,6 +1,8 @@
 # Development Tool Kit
 
 ## How to install
+- Create and copy .user-preference.json from [samples](https://github.com/ajk-hub/dtk/blob/main/samples/.user-preference.json)
+in your home directory e.g. /home/dtk 
 - Download dtk.zip file from [Release](https://github.com/ajk-hub/dtk/releases)
 ```shell
 chmod +x dtk
