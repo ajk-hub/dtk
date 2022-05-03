@@ -1,3 +1,17 @@
+# [1.2.0](https://github.com/ajk-hub/dtk/compare/v1.1.1...v1.2.0) (2022-05-03)
+
+
+### Bug Fixes
+
+* update k6 output results format ([5e049d6](https://github.com/ajk-hub/dtk/commit/5e049d605b7443352bce179f20b2c6b988225c0d))
+
+
+### Features
+
+* add command print support for k6 ([cb94fe1](https://github.com/ajk-hub/dtk/commit/cb94fe12584e832caeb5b8731f8ffe3fd05504d0))
+
+
+
 ## [1.1.1](https://github.com/ajk-hub/dtk/compare/v1.1.0...v1.1.1) (2021-09-23)
 
 
