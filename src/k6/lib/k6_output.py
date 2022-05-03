@@ -4,6 +4,7 @@ from src.k6.lib.k6_result_writer import K6Writer
 
 def write(result_dir: str, input_file_name: str, output_file_name: str):
     print(f'Writing k6 output in ........... {result_dir}/')
+    print('Printing Results :')
     input_file_name = f'{result_dir}/{input_file_name}'
     output_file_name = f'{result_dir}/{output_file_name}'
 

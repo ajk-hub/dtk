@@ -57,6 +57,12 @@ class K6CommandHelper:
         if not args.verbose:
             CMD_STACK.append('>/dev/null')
 
+        if args.print:
+            print("Shell Command")
+            print("==================================================================================")
+            print(*CMD_STACK, sep=' ')
+            print("==================================================================================")
+
         process.command(CMD_STACK)
         k6_output.write(result_dir, k6_summary_file, result_file)
 

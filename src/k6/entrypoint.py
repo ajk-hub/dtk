@@ -24,6 +24,7 @@ def _register_arg_options(parser: ArgumentParser):
     k6_run_parser.add_argument('--username', help='Username', default='')
     k6_run_parser.add_argument('--password', help='Password', default='')
     k6_run_parser.add_argument('-v', '--verbose', help="verbose", action='store_true')
+    k6_run_parser.add_argument('--print', help="print command", action='store_true')
 
     k6_run_parser.set_defaults(func=_k6_run)
 
