@@ -20,3 +20,6 @@ build-artifacts:build
 install-dtk:build
 	sudo mv ./artifacts/dtk /usr/local/bin/dtk
 	sudo chmod +x /usr/local/bin/dtk
+
+test:
+	python -m src k6 run test.js

@@ -22,9 +22,15 @@ class K6Writer:
 
     @staticmethod
     def write_k6_results_in_md(output_file_name: str, md_result: MDResult):
-        md_status = f" | {md_result.test_name:60} | {md_result.md_req_per_second:>16} " \
-                    f"| {md_result.md_req_status_count:>11} | {md_result.md_req_duration:>16} " \
-                    f"| {md_result.md_status:10} |"
+        md_status = f"| {md_result.test_name:<60}" \
+                    f" | {md_result.vus:<9}" \
+                    f" | {md_result.reqs_count:<9}" \
+                    f" | {md_result.checks_success_count:<13}" \
+                    f" | {md_result.checks_failed_count:<10}" \
+                    f" | {md_result.reqs_per_second:<10}" \
+                    f" | {md_result.reqs_success_percentage:<21}" \
+                    f" | {md_result.reqs_duration_per_millisecond:<22}" \
+                    f" | {md_result.status:<9} |"
         print(md_status)
 
         with open(f"{output_file_name}.md", "a") as md_file:
@@ -44,9 +50,13 @@ class K6Writer:
     def write_results_to_json(output_file_name: str, result: K6Result):
         result = {
             "test_script": result.test_name,
-            "request_per_second": f'{result.req_per_second}/s',
-            "success_rate": f'{result.req_status_count}%',
-            "request_duration": f'{result.req_duration}ms',
+            "vus": result.vus,
+            "reqs_count": result.reqs_count,
+            "checks_success_count": result.checks_success_count,
+            "checks_failed_count": result.checks_failed_count,
+            "checks_success_percentage": f'{result.checks_success_percentage}%',
+            "reqs_per_second": f'{result.reqs_per_second}/s',
+            "reqs_duration_per_millisecond": f'{result.req_duration_per_millisecond}ms',
             "status": 'pass' if result.status else 'fail'
         }
 
